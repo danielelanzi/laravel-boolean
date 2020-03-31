@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  color: #1b3c59;
+}
+
 main {
   background: #e8ebf1;
 }

@@ -11,27 +11,32 @@
 {{-- @dd(Request::route()->getName()); --}}
 <body>
     <div class="container">
-        <nav class="navbar">
-            <div class="logo">
-                <img src="https://www.boolean.careers/images/common/logo.png" alt="Boolean Carreers">
-            </div>
-            <ul>
-                <li>
-                    {{-- condizione = bool,  vero = ?,  falso = : --}}
-                <a class=" {{ (Request::route()->getName() == 'static_page.home') ? 'active' : ''}} " href="{{route('static_page.home')}}">Home</a>
-                </li>
-                <li>
-                    <a href="">Corso</a>
-                </li>
-                <li>
-                    {{-- condizione = bool,  vero = ?,  falso = : --}}
-                <a class="{{ (Request::route()->getName() == 'student.index') ? 'active' : ''}} " href="{{route('student.index')}}">Dopo Corso</a>
-                </li>
-                <li>
-                    <a href="">Lezione Gratuita</a>
-                </li>
-                <li>
-                    <a class="btn" href="">Canditati ora</a>
-                </li>
-            </ul>
-        </nav>
+        {{-- header --}}
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="https://www.boolean.careers/images/common/logo.png" alt="Boolean Carreers">
+                </div>
+                <ul>
+                    <li>
+                        {{-- condizione = bool,  vero = ?,  falso = : --}}
+                    <a class=" {{ (Request::route()->getName() == 'static_page.home') ? 'active' : ''}} " href="{{route('static_page.home')}}">Home</a>
+                    </li>
+                    <li>
+                        <a href="">Corso</a>
+                    </li>
+                    <li>
+                        {{-- condizione = bool,  vero = ?,  falso = : --}}
+                    <a class="{{ (Request::route()->getName() == 'student.index') ? 'active' : ''}} " href="{{route('student.index')}}">Dopo Corso</a>
+                    </li>
+                    <li>
+                        <a href="">Lezione Gratuita</a>
+                    </li>
+                    <li>
+                        <a class="btn" href="">Canditati ora</a>
+                    </li>
+                </ul>
+            </nav>
+            @yield('header')
+        </header>
+        {{-- /header --}}
