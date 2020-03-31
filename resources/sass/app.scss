@@ -1,0 +1,101 @@
+//
+@mixin clearfix {
+    &::after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    background: #e8ebf1;
+}
+
+.navbar {
+    color: white;
+    background-color: white;
+    @include clearfix;
+    .logo {
+        padding: 20px 10px;
+        float: left;
+        img {
+            width: 200px;
+        }
+    }
+    ul {
+        float: right;
+        list-style: none;
+        text-align: right;
+        li {
+            display: inline-block;
+            margin: 0 30px;
+            line-height: 90px;
+            a {
+                color: #1b3c59;
+                text-decoration: none;
+                &.active {
+                    color: lightgreen;
+                }
+            }
+            .btn{
+                    background-color: lightgreen;
+                    height: 40px;
+                    color: white;   
+                    border-radius: 5px;
+                    padding: 5px;
+                }
+        }
+    }
+}
+
+.nav-footer {
+    background: #1b3c59;
+    height: 100px;
+    @include clearfix;
+    ul {
+        list-style: none;
+        float: right;
+        text-align: right;
+        a {
+            color: white;
+        }
+    }
+}
+
+.students {
+    display: flex;
+    flex-wrap: wrap;
+    .student {
+        box-shadow: 5px 7px 14px 0 #b0b0b0;
+        width: calc(100% / 2 - 20px);
+        margin: 20px 10px;
+        padding: 20px;
+        background-color: whitesmoke;
+        color: #1b3c59;
+        border-radius: 5px;
+        .info {
+            @include clearfix;
+            img, .text {
+                float: left;
+            }
+            img{
+                width: 90px;
+                margin-right: 10px;
+                border-radius: 5px;
+            }
+            .text {
+                a {
+                    text-decoration: none;
+                    color: #1b3c59;
+                }
+                width: calc(100% - 100px);
+            }
+        }
+    }
+}
