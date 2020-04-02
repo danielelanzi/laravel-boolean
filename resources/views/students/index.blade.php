@@ -6,6 +6,11 @@
             <option value="{{$gender}}">{{$gender}}</option>
         @endforeach
     </select>
+    <select name="etafilter" id="etafilter">
+        @foreach ($eta as $age)
+            <option value="{{$age}}">{{$age}}</option>
+        @endforeach
+    </select>
 </div>
     <div class="students">
         {{-- {{config('students.students')}} --}}

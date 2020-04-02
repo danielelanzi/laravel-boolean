@@ -19,6 +19,13 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // Rotta che richiama funzione Api per Javascript
+
+// Gender
 Route::namespace('Api')->group(function () {
     Route::post('/students/genders', 'StudentController@gender');
+});
+
+// Età
+Route::namespace('Api')->group(function () {
+    Route::post('/students/eta', 'StudentController@eta');
 });

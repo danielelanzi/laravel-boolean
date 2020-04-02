@@ -8,11 +8,13 @@ class StudentController extends Controller
 {
     private $students;
     private $genders;
+    private $eta;
 
     public function __construct()
     {
         $this->students = config('students.students');
         $this->genders = config('students.genders');
+        $this->eta = config('students.eta');
         // $this->getAllStudents();
         // $this->getAllGenders();
     }
@@ -22,7 +24,8 @@ class StudentController extends Controller
         $data = 
         [
             'students' => $this->students,
-            'genders' => $this->genders
+            'genders' => $this->genders,
+            'eta' => $this->eta
         ]; 
         // dd($this->students);
         // return view('students.index', compact('students'));

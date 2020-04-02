@@ -29919,6 +29919,29 @@ $(document).ready(function () {
       }
     });
   });
+  $('#etafilter').change(function () {
+    // console.log($(thiis).val());
+    console.log(window.location.protocol + '//' + window.location.host + '/api/students/eta');
+    $.ajax({
+      'url': window.location.protocol + '//' + window.location.host + '/api/students/eta',
+      'data': {
+        'eta': $(this).val()
+      },
+      'method': 'POST',
+      success: function success(data) {
+        console.log(data.error);
+
+        if (data.response.length > 0) {
+          console.log(data.response);
+        } else {
+          console.log('No Age');
+        }
+      },
+      error: function error() {
+        console.log('error');
+      }
+    });
+  });
 });
 
 /***/ }),
